@@ -1,0 +1,27 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.print(" Enter the size: ");
+        int size = input.nextInt();
+        drawTriangle(size);
+        input.close();
+    }
+
+    public static void drawTriangle(int size) {
+        for (int i = 1; i <= size; i++) {
+            addSpaces(size - i);
+            drawBar(i * 2 - 1);
+        }
+    }
+
+    public static void addSpaces(int n) {
+        for (int i = 0; i < n; i++) System.out.print(" ");
+    }
+
+    public static void drawBar(int n) {
+        for (int i = 0; i < n; i++) System.out.print("*");
+        System.out.println();
+    }
+}
