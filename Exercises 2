@@ -1,0 +1,30 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        System.out.print(" Enter a number: ");
+        double number = input.nextDouble();
+
+        System.out.println("Convert:");
+        System.out.println("1. Inches to Centimeters\n2. Feet to Centimeters\n3. Yards to Meters\n4. Miles to Kilometers");
+        System.out.println("5. Centimeters to Inches\n6. Centimeters to Feet\n7. Meters to Yards\n8. Kilometers to Miles");
+        System.out.print(" Enter your choice: ");
+        int choice = input.nextInt();
+
+        double result = 0;
+        switch (choice) {
+            case 1: result = number * 2.54; System.out.printf("%.2f inches = %.2f centimeters\n", number, result); break;
+            case 2: result = number * 30; System.out.printf("%.2f feet = %.2f centimeters\n", number, result); break;
+            case 3: result = number * 0.91; System.out.printf("%.2f yards = %.2f meters\n", number, result); break;
+            case 4: result = number * 1.6; System.out.printf("%.2f miles = %.2f kilometers\n", number, result); break;
+            case 5: result = number / 2.54; System.out.printf("%.2f centimeters = %.2f inches\n", number, result); break;
+            case 6: result = number / 30; System.out.printf("%.2f centimeters = %.2f feet\n", number, result); break;
+            case 7: result = number / 0.91; System.out.printf("%.2f meters = %.2f yards\n", number, result); break;
+            case 8: result = number / 1.6; System.out.printf("%.2f kilometers = %.2f miles\n", number, result); break;
+            default: System.out.println("Invalid choice");
+        }
+        input.close();
+    }
+}
